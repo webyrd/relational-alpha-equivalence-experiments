@@ -39,3 +39,16 @@ Extended Andorra Model of evaluation, etc., inspired by work in
 Prolog, Curry, and constraint programming.  This version of the code
 is eager, and can serve as a baseline for "generate-and-test"
 behavior.
+
+TODO
+
+* Try experiment proposed by Michael Ballantyne on May 11, 2024:
+  instead of `capture-avoiding-substo` eagerly performing
+  alpha-renaming by calling the eager `alpha-equivo`, add a renaming
+  `(x x^)` to an environment that is passed around, and use `absento`
+  to ensure `x^` is fresh.
+
+* Try using set constraints from clpset to represent the variable
+  bindings.  The original version of clpset doesn't include `absento`,
+  though--will probably need an implementation that supports
+  `absento`.
